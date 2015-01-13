@@ -3,8 +3,10 @@
 
 A Python tool for extracting and/or plotting data from the NEXRAD (WSR-88D) Doppler weather radar network operated by the US National Weather Service. This can be used for inputs to models that require a meteorologic component.
  
- The basic command-line options will as follows once they are created:
+ The basic command-line options will as follows:
  ```
+$ python radar_netcdf.py
+
   Options:
    -h, --help         show this help message and exit
    -v                 If selected, turns on verbosity
