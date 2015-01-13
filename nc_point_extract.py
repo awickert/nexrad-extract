@@ -46,20 +46,9 @@ class radarout(object):
     # We will reorder everything to this set of azimuths
     self.theta = np.arange(0.5,360.) # We will shift all of the reflectivities to match this
     self.thetarad = self.theta * np.pi/180.
-    # Cartesian
-    #self.x = self.r * np.cos(self.thetarad)
-    #self.y = self.r * np.sin(self.thetarad)
     # Grid - get x,y at every r,theta
     self.thetarad2d, trash = np.meshgrid(self.thetarad, np.ones(len(self.r)))
     self.thetarad2d = self.thetarad2d.transpose()
-    # Azimuth to polar coords - shift 0 angle and reverse direction
-    #self.x = self.r * np.cos(self.thetarad2d)
-    #self.y = self.r * np.sin(self.thetarad2d)
-    #self.thetarad2d = 2.*np.pi - (self.thetarad2d - np.pi/2.)
-    #self.x = self.r * np.cos(self.thetarad2d - np.pi/2.)
-    #self.y = -1* self.r * np.sin(self.thetarad2d- np.pi/2.)
-    #self.x = (-2**.5/2.) * self.r * np.cos(self.thetarad2d)
-    #self.y = (-2**.5/2.) * self.r * np.sin(self.thetarad2d)
     self.y = self.r * np.cos(self.thetarad2d)
     self.x = self.r * np.sin(self.thetarad2d)
 
